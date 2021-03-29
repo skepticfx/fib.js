@@ -5,14 +5,17 @@ function fibonacci(num) {
 }
 
 addEventListener("fetch", (event) => {
-  const WHAT = 90;
-  
+  const { searchParams } = new URL(event.request.url)
+  let what = searchParams.get('what') || 25;
+  console.log(what)
+  console.log(event.request.url);
+
   const start = Date.now();
-  const res = fibonacci(WHAT);
+  const res = fibonacci(what);
   const end = Date.now();
   const delta = end-start;
   
-  const response = new Response(`fib(${WHAT})=${res}, took ${delta}ms to compute`, {
+  const response = new Response(`fib(${what})=${res}, took ${delta}ms to compute`, {
     headers: { "content-type": "text/plain" },
   });
   event.respondWith(response);
