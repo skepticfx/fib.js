@@ -5,7 +5,7 @@ function fibonacci(num) {
 }
 
 addEventListener("fetch", (event) => {
-  const WHAT = 30;
+  const WHAT = 90;
   
   const start = Date.now();
   const res = fibonacci(WHAT);
