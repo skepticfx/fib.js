@@ -1,19 +1,12 @@
-function fibonacci(num){
-  var a = 1, b = 0, temp;
+function fibonacci(num) {
+  if (num <= 1) return 1;
 
-  while (num >= 0){
-    temp = a;
-    a = a + b;
-    b = temp;
-    num--;
-  }
-
-  return b;
+  return fibonacci(num - 1) + fibonacci(num - 2);
 }
 
 addEventListener("fetch", (event) => {
   const start = Date.now();
-  const res = fibonacci(100);
+  const res = fibonacci(500);
   const end = Date.now();
   const delta = end-start;
   
