@@ -5,12 +5,14 @@ function fibonacci(num) {
 }
 
 addEventListener("fetch", (event) => {
+  const WHAT = 30;
+  
   const start = Date.now();
-  const res = fibonacci(20);
+  const res = fibonacci(WHAT);
   const end = Date.now();
   const delta = end-start;
   
-  const response = new Response(`fib(100)=${res}, took ${delta}ms to compute`, {
+  const response = new Response(`fib(${WHAT})=${res}, took ${delta}ms to compute`, {
     headers: { "content-type": "text/plain" },
   });
   event.respondWith(response);
