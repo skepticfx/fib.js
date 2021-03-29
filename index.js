@@ -6,7 +6,7 @@ function fibonacci(num) {
 
 addEventListener("fetch", (event) => {
   const start = Date.now();
-  const res = fibonacci(500);
+  const res = fibonacci(50);
   const end = Date.now();
   const delta = end-start;
   
